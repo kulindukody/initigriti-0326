@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - FLAG=INTIGRITI{d0m_cl0bb3r1ng_p1u5_j50np_m4k35_4_gr34t_x55}
+      - ADMIN_COOKIE_NAME=FLAG
+    restart: unless-stopped
+    security_opt:
+      - seccomp:unconfined # Required for Chrome
+    init: true

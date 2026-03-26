@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intigriti Secure Search Portal</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="intigriti-green">&lt;/</span>ThreatCenter<span class="intigriti-green">&gt;</span>
+            </div>
+            <h1>Secure Search Portal</h1>
+        </header>
+
+        <main>
+            <div class="search-box">
+                <form id="searchForm" action="/challenge.html" method="GET">
+                    <input type="text" name="q" id="q" placeholder="Search operational intelligence..." autocomplete="off">
+                    <button type="submit">Search</button>
+                    <input type="hidden" name="domain" value="internal">
+                </form>
+            </div>
+
+            <div class="results" id="resultsContainer">
+            </div>
+            
+            <div class="disclaimer">
+                <p>Did you find something interesting? <a href="#" id="reportBtn">Report it to Admin</a></p>
+            </div>
+        </main>
+    </div>
+
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Report Anomalous Behavior</h2>
+            <form id="reportForm">
+                <input type="url" id="reportUrl" name="url" placeholder="https://..." required>
+                <button type="submit" class="danger-btn">Send to Admin</button>
+            </form>
+            <p id="reportStatus"></p>
+        </div>
+    </div>
+
+    <script src="/js/purify.min.js"></script>
+    <script src="/js/components.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
